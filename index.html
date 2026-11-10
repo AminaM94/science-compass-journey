@@ -70,8 +70,6 @@ body.s-attract #sc-attract,body.s-intro #sc-intro,body.s-lang #sc-lang,body.s-de
 #identity .en{font-family:var(--fENd);font-weight:700;font-size:22px;letter-spacing:.42em;margin-top:6px;opacity:.92;background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(157,92,255,.55));display:block;direction:ltr}
 #identity .ar{font-family:var(--fAR);font-weight:700;font-size:84px;line-height:1.15;position:relative;display:inline-block;overflow:hidden;padding:0 24px 6px;background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 14px rgba(157,92,255,.5));direction:rtl}
 #identity .line{width:520px;height:2px;margin:14px auto 0;background:linear-gradient(90deg,transparent,var(--p300),#fff,var(--p300),transparent);box-shadow:0 0 14px var(--p400)}
-#identity .flare{position:absolute;inset:-20px -40px;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.85) 50%,transparent 65%);mix-blend-mode:overlay;transform:translateX(-130%);pointer-events:none}
-#identity.reveal .flare{animation:flare 2.2s ease-out .4s}
 @keyframes flare{to{transform:translateX(130%)}}
 body.s-intro #identity{top:34px;transform:scale(.62)}
 body.s-intro #identity:not(.reveal){opacity:0}
@@ -141,7 +139,7 @@ body.s-dest #topbar,body.s-nav #topbar,body.s-explore #topbar{opacity:1;pointer-
 .bubble.on{opacity:1;transform:translate(-50%,-100%)}
 
 /* ---------- science elements ---------- */
-#sci{position:absolute;inset:0;pointer-events:none;z-index:2;transition:opacity 1.5s}
+#sci{position:absolute;top:0;bottom:0;left:calc(50% - 590px);width:1180px;pointer-events:none;z-index:2;transition:opacity 1.5s}
 #sci .el{position:absolute;opacity:0;transform:scale(.6) translateY(30px);transition:opacity 1.6s ease,transform 1.8s cubic-bezier(.3,1.3,.5,1)}
 #sci.show .el{opacity:.85;transform:none}
 #sci .el:nth-child(2){transition-delay:.25s}#sci .el:nth-child(3){transition-delay:.5s}#sci .el:nth-child(4){transition-delay:.75s}#sci .el:nth-child(5){transition-delay:1s}#sci .el:nth-child(6){transition-delay:1.2s}#sci .el:nth-child(7){transition-delay:1.4s}
@@ -265,7 +263,7 @@ html[lang=en] #stopCard .k{font-family:var(--fENd);font-size:12px;letter-spacing
 #navHud{position:absolute;bottom:20px;inset-inline-end:20px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(20,6,45,.65),rgba(20,6,45,0) 70%);pointer-events:none}
 
 /* ---------- arrival ---------- */
-#sc-arrive .rings{position:absolute;left:590px;top:400px}
+#sc-arrive .rings{position:absolute;left:50%;top:calc(50% - 10px)}
 #sc-arrive .rings i{position:absolute;left:0;top:0;width:200px;height:200px;margin:-100px;border-radius:50%;border:3px solid var(--p300);opacity:0}
 #sc-arrive.go .rings i{animation:shock 2.4s cubic-bezier(.2,.7,.3,1) forwards}
 #sc-arrive.go .rings i:nth-child(2){animation-delay:.25s;border-color:#fff}
@@ -282,7 +280,7 @@ html[lang=en] #stopCard .k{font-family:var(--fENd);font-size:12px;letter-spacing
 html[lang=en] #arr1 .a{font-family:var(--fENd);font-size:40px;letter-spacing:.1em}
 #arr1 .b{font-size:22px;color:var(--p200);margin-top:6px}
 #arr2{top:110px;font-size:30px;font-weight:600;color:#fff;letter-spacing:.04em}
-#lockBadge{position:absolute;left:590px;top:400px;width:120px;height:120px;margin:-60px;border-radius:50%;display:grid;place-items:center;
+#lockBadge{position:absolute;left:50%;top:calc(50% - 10px);width:120px;height:120px;margin:-60px;border-radius:50%;display:grid;place-items:center;
   background:radial-gradient(circle at 35% 30%,#fff,#c9a6ff 40%,#7b2ff7);box-shadow:0 0 60px #9d5cff;opacity:0;transform:scale(0);transition:all .8s cubic-bezier(.3,1.6,.5,1);z-index:9}
 #lockBadge svg{width:60px;height:60px;stroke:#2a0b5c;stroke-width:3;fill:none}
 #lockBadge.on{opacity:1;transform:scale(1)}
@@ -294,7 +292,7 @@ html[lang=en] #arr1 .a{font-family:var(--fENd);font-size:40px;letter-spacing:.1e
 #sc-explore .zone .tag{position:absolute;top:-12px;inset-inline-end:14px;font-size:12px;font-weight:700;padding:3px 10px;border-radius:10px;background:#fff;color:var(--p700);display:none}
 #sc-explore .zone.mine .tag{display:block}
 #sc-explore .zone.mine{border-color:rgba(255,255,255,.8)}
-#here{position:absolute;left:590px;top:575px;transform:translateX(-50%);font-size:16px;color:var(--p200);white-space:nowrap;padding:6px 16px;border-radius:16px;background:rgba(10,2,23,.5);border:1px solid rgba(226,210,255,.2)}
+#here{position:absolute;left:50%;top:calc(50% + 165px);transform:translateX(-50%);font-size:16px;color:var(--p200);white-space:nowrap;padding:6px 16px;border-radius:16px;background:rgba(10,2,23,.5);border:1px solid rgba(226,210,255,.2)}
 #exActions{position:absolute;bottom:34px;inset-inline-end:34px;display:flex;gap:12px}
 #panelBack{position:absolute;inset:0;background:rgba(5,1,12,.5);opacity:0;pointer-events:none;transition:opacity .4s;z-index:25}
 #panel{position:absolute;top:0;bottom:0;inset-inline-end:0;width:460px;padding:110px 40px 40px;z-index:26;
@@ -318,7 +316,7 @@ body.panel #panel{transform:none}body.panel #panelBack{opacity:1;pointer-events:
 body.s-ending #photos{opacity:.55}
 body.s-ending #photos .ph.on{filter:blur(12px) brightness(.28) saturate(1.3);transition:filter 2s}
 body.s-ending.s-ending #sci{opacity:.42}
-#endArc{position:absolute;left:270px;top:-20px;width:640px;height:640px;overflow:visible;pointer-events:none}
+#endArc{position:absolute;left:calc(50% - 320px);top:calc(50% - 430px);width:640px;height:640px;overflow:visible;pointer-events:none}
 #endArc .base{stroke:rgba(226,210,255,.16)}
 #endArc .prog{stroke:url(#eaG);stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
 #sc-ending.arc #endArc .prog{stroke-dashoffset:0;transition:stroke-dashoffset 2.6s cubic-bezier(.5,0,.2,1)}
@@ -405,7 +403,7 @@ html[lang=en] #endMsg .l2 .w{font-family:var(--fEN);font-size:32px;letter-spacin
     <div class="el" style="left:260px;top:700px"><svg width="200" height="40" viewBox="0 0 200 40"><path id="wave" d="" fill="none" stroke="#c19bff" stroke-width="2"/></svg></div>
   </div>
 
-  <div id="identity"><div class="ar">مهرجان العلوم<div class="flare"></div></div><div class="en">SCIENCE FESTIVAL</div><div class="line"></div></div>
+  <div id="identity"><div class="ar">مهرجان العلوم</div><div class="en">SCIENCE FESTIVAL</div><div class="line"></div></div>
 
   <div id="topbar">
     <div class="mark" id="markBtn"><img id="logoImg" alt=""><svg class="glyph" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="url(#chg)" stroke-width="2.5"/><path d="M20 5 L24 20 L20 35 L16 20Z" fill="url(#chg)"/><path d="M20 5 L24 20 L16 20Z" fill="#9d5cff"/><defs><linearGradient id="chg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#9a9ab0"/><stop offset="1" stop-color="#eee"/></linearGradient></defs></svg><div><div class="t2">مهرجان العلوم</div><div class="t1">SCIENCE FESTIVAL</div></div></div>
@@ -621,27 +619,32 @@ let LANG='ar', SCENE='attract', destZone=null, stopIdx=0, ASSETS={};
 const stage=$('#stage');
 
 /* ---------- layout ---------- */
-function fit(){const s=Math.min(innerWidth/1180,innerHeight/820);stage.style.transform=`translate(-50%,-50%) scale(${s})`;sizeCanvas();}
+let SW=1180,SH=820;
+function fit(){const ar=innerWidth/innerHeight;SW=Math.max(1180,Math.round(820*ar));SH=Math.max(820,Math.round(1180/ar));
+  const s=Math.min(innerWidth/SW,innerHeight/SH);stage.style.width=SW+'px';stage.style.height=SH+'px';stage.style.transform=`translate(-50%,-50%) scale(${s})`;
+  sizeCanvas(); if(typeof SCENE!=='undefined'){placePersistent(); if(document.getElementById('destZones').children.length) buildZones();}}
 addEventListener('resize',fit);
 const POS={ // [x,y,scale,opacity] in stage coordinates (LTR); mirrored for RTL
   attract:{c:[590,400,.7,0], r:[930,480,.8,0]},
   intro:  {c:[590,420,1,1],  r:[950,470,.9,1]},
   lang:   {c:[590,280,.62,1],r:[915,300,.62,1]},
-  dest:   {c:[590,410,.68,1],r:[1110,738,.42,1],b:[1010,688]},
-  nav:    {c:[1065,705,.42,1],r:[935,710,.36,1]},
+  dest:   {c:[590,410,.68,1],r:[1110,738,.42,1,'e'],b:[1010,688,'e']},
+  nav:    {c:[1065,705,.42,1,'e'],r:[935,710,.36,1,'e']},
   arrive: {c:[590,400,1.05,1],r:[935,520,.7,1]},
-  explore:{c:[590,420,.44,1],r:[92,730,.46,1],b:[330,780]},
+  explore:{c:[590,420,.44,1],r:[92,730,.46,1,'e'],b:[330,780,'e']},
   ending: {c:[590,300,.82,1],r:[925,330,.72,1],b:[925,190]}
 };
 function placePersistent(){
   const p=POS[SCENE], rtl=LANG==='ar' && !['attract','intro','lang'].includes(SCENE);
-  const mx=x=>rtl?1180-x:x;
+  // design coordinates are for 1180×820; centred items stay centred, edge items ('e') keep their distance to the edge
+  const ex=SW-1180, ey=(SH-820)/2;
+  const X=(x,e)=>{const v=e==='e'?(x<590?x:x+ex):x+ex/2; return rtl?SW-v:v;};
   const c=p.c, r=p.r;
-  $('#compassWrap').style.transform=`translate(${mx(c[0])-200}px,${c[1]-200}px) scale(${c[2]})`;
+  $('#compassWrap').style.transform=`translate(${X(c[0],c[4])-200}px,${c[1]+ey-200}px) scale(${c[2]})`;
   $('#compassWrap').style.opacity=c[3];
-  $('#robotWrap').style.transform=`translate(${mx(r[0])-120}px,${r[1]-150}px) scale(${r[2]})`;
+  $('#robotWrap').style.transform=`translate(${X(r[0],r[4])-120}px,${r[1]+ey-150}px) scale(${r[2]})`;
   $('#robotWrap').style.opacity=r[3];
-  const bx=p.b?mx(p.b[0]):Math.max(190,Math.min(990,mx(r[0]))), by=p.b?p.b[1]:r[1]-128*r[2];
+  const bx=p.b?X(p.b[0],p.b[2]):Math.max(190,Math.min(SW-190,X(r[0],r[4]))), by=(p.b?p.b[1]:r[1]-128*r[2])+ey;
   const b=$('#bubble'); b.style.left=bx+'px'; b.style.top=by+'px';
 }
 function setScene(s){
@@ -681,7 +684,7 @@ function cPulse(){const p=$('#cPulse');p.classList.remove('go');void p.offsetWid
 function zoneLayout(cx,cy,rx,ry){const angs=[-42,0,42,138,180,222];return angs.map(a=>{const r=a*Math.PI/180;return [cx+rx*Math.cos(r),cy+ry*Math.sin(r),a];});}
 function buildZones(){
   const rtl=LANG==='ar';
-  const dl=zoneLayout(590,410,405,235), el=zoneLayout(590,430,420,250);
+  const cx0=SW/2, ey=(SH-820)/2, dl=zoneLayout(cx0,410+ey,405,235), el=zoneLayout(cx0,430+ey,420,250);
   $('#destZones').innerHTML='';$('#exZones').innerHTML='';
   CONFIG.zones.forEach((z,i)=>{
     const t=z[LANG];
@@ -700,7 +703,7 @@ function pickZone(z,b){
   destZone=z.id; SFX.click(); $$('#destZones .zone').forEach(e=>e.classList.toggle('sel',e===b));
   // point needle toward card
   const cx=parseFloat(b.style.left), cy=parseFloat(b.style.top), rtlShift=0;
-  const ang=Math.atan2(cy-410,cx-590)*180/Math.PI+90; needleTo(ang); SFX.compass(.6); cPulse();
+  const ang=Math.atan2(cy-(410+(SH-820)/2),cx-SW/2)*180/Math.PI+90; needleTo(ang); SFX.compass(.6); cPulse();
   updateDestInfo(); const s=$('#startBtn'); s.disabled=false; s.classList.add('glow');
   bubble(T[LANG].start+' ✦',2500);
 }
